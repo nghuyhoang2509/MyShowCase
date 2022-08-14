@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-decoration: none;
+}
+
+body {
+  padding: 25px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  background-color: #8EC5FC;
+  background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 8s ease infinite;
+          animation: gradient 8s ease infinite;
+  height: 100vh;
+}
+body #welcome {
+  color: #ffffff;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 12px;
+}
+body #intro {
+  color: #ffffff;
+  text-align: center;
+}
+body #wrap-avatar {
+  margin: 16px 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #wrap-avatar #avatar {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+}
+body #contact {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 24px;
+  align-items: center;
+}
+body #contact a {
+  margin: 6px;
+}
+body #showcase {
+  margin-top: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+body #showcase .card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0px 0px 10px 10px;
+  box-shadow: rgba(0, 0, 0, 0.2) 3px 3px;
+  margin: 8px 16px;
+  background-color: #ffffff;
+  height: 300px;
+  min-width: 300px;
+  width: 30%;
+}
+body #showcase .card .card-img {
+  width: 100%;
+  height: 75%;
+}
+body #showcase .card .content {
+  padding: 6px;
+}
+body #showcase .card .content .card-title {
+  color: #000000;
+}
+body #showcase .card .content .description {
+  opacity: 0.6;
+  color: #000000;
+  font-weight: 400;
+  font-size: 12px;
+  margin-top: 6px;
+}
+body #showcase .card:hover {
+  opacity: 0.8;
+}
+
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}/*# sourceMappingURL=styles.css.map */
