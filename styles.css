@@ -16,7 +16,7 @@ body {
   background-size: 400% 400%;
   -webkit-animation: gradient 8s ease infinite;
           animation: gradient 8s ease infinite;
-  height: 100vh;
+  height: auto;
 }
 body #welcome {
   color: #ffffff;
@@ -37,8 +37,8 @@ body #wrap-avatar {
 }
 body #wrap-avatar #avatar {
   border-radius: 50%;
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   text-align: center;
 }
 body #contact {
