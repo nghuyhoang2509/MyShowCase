@@ -4,6 +4,8 @@ $Blue-sea-light: rgb(106, 190, 205);
 $Bluesea: rgb(62, 84, 163);
 $pink-light: rgb(207, 99, 144);
 $green-light: rgb(170, 215, 66);
+$red: #CC0000;
+$orange: #FFCC00;
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
@@ -121,6 +123,12 @@ body {
                     }
                     .python-type{
                         color: $green-light;
+                    }
+                    .react-type{
+                        color: $red;
+                    }
+                    .firebase-type{
+                        color: $orange;
                     }
                 }
                 .description {
