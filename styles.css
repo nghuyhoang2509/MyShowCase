@@ -119,6 +119,12 @@ body #showcase .card .content .card-type .firebase-type {
 body #showcase .card .content .card-type .redux-type {
   color: purple;
 }
+body #showcase .card .content .card-type .mongo-type {
+  color: greenyellow;
+}
+body #showcase .card .content .card-type .node-type {
+  color: green;
+}
 body #showcase .card .content .description {
   opacity: 0.8;
   color: #000000;
