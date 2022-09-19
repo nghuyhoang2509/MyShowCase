@@ -28,6 +28,9 @@ body {
     animation: gradient 8s ease infinite;
     height: auto;
 
+    .header{
+        animation: appear  1s ease-in;
+    }
     #welcome {
         color: $White;
         font-weight: 500;
@@ -69,6 +72,7 @@ body {
     }
 
     #showcase {
+        animation: side-left 1s ease-in;
         margin-top: 20px;
         width: 100%;
         height: 100%;
@@ -91,14 +95,14 @@ body {
             object-fit: cover;
             transition: transform 0.3s ease 0s;
             backface-visibility: hidden;
-
+            
             .card-img {
                 border-radius: 10px 10px 0px 0px;
                 width: 100%;
                 height: 60%;
-
-
-
+               /*  object-fit: scale-down;
+                background-image: url(./assets/image/background.png);
+                background-size: cover; */
             }
 
             .content {
@@ -169,5 +173,27 @@ body {
 
     100% {
         background-position: 0% 50%;
+    }
+}
+
+
+@keyframes side-left {
+    0% {
+        transform: translateX(-100vw);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }

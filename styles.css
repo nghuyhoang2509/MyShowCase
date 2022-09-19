@@ -22,6 +22,10 @@ body {
           animation: gradient 8s ease infinite;
   height: auto;
 }
+body .header {
+  -webkit-animation: appear 1s ease-in;
+          animation: appear 1s ease-in;
+}
 body #welcome {
   color: #ffffff;
   font-weight: 500;
@@ -56,6 +60,8 @@ body #contact a {
   margin: 6px;
 }
 body #showcase {
+  -webkit-animation: side-left 1s ease-in;
+          animation: side-left 1s ease-in;
   margin-top: 20px;
   width: 100%;
   height: 100%;
@@ -85,6 +91,9 @@ body #showcase .card .card-img {
   border-radius: 10px 10px 0px 0px;
   width: 100%;
   height: 60%;
+  /*  object-fit: scale-down;
+   background-image: url(./assets/image/background.png);
+   background-size: cover; */
 }
 body #showcase .card .content {
   padding: 16px;
@@ -157,5 +166,37 @@ body #showcase .card:hover {
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+@-webkit-keyframes side-left {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes side-left {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }/*# sourceMappingURL=styles.css.map */
