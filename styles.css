@@ -116,6 +116,9 @@ body #showcase .card .content .card-type .react-type {
 body #showcase .card .content .card-type .firebase-type {
   color: #FFCC00;
 }
+body #showcase .card .content .card-type .redux-type {
+  color: purple;
+}
 body #showcase .card .content .description {
   opacity: 0.8;
   color: #000000;
