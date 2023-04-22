@@ -1,215 +1,239 @@
-$White: #ffffff;
-$black: #000000;
-$Blue-sea-light: rgb(106, 190, 205);
-$Bluesea: rgb(62, 84, 163);
-$pink-light: rgb(207, 99, 144);
-$green-light: rgb(170, 215, 66);
-$red: #CC0000;
-$orange: #FFCC00;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+$global-color-primary: #1a191d;
+$global-color-card: #201f23;
+$global-color-secondary: #a8abaf;
+$global-color-primary-transparent: rgba(26, 25, 29, 0.7);
+$global-color-title-expertise-1: #df058d;
+$global-color-title-expertise-2: #2c49d8;
+$global-color-title-expertise-3: #ff6b2b;
 
 * {
+    user-select: none;
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
-    outline: none;
+    font-family: 'Roboto', sans-serif;
     text-decoration: none;
 }
 
-body {
-    user-select: none;
-    padding: 25px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    background-color: #8EC5FC;
-    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
-    background-size: 400% 400%;
-    animation: gradient 8s ease infinite;
-    height: auto;
 
-    .header {
-        animation: appear 1s ease-in;
-    }
+html {
+    scroll-behavior: smooth;
+}
 
-    #welcome {
-        color: $White;
-        font-weight: 500;
-        text-align: center;
-        margin-bottom: 12px;
-    }
 
-    #intro {
-        color: $White;
-        text-align: center;
-    }
+#navbar {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80px;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: $global-color-primary-transparent;
+    z-index: 10001;
 
-    #wrap-avatar {
-        margin: 16px 0px;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    #logo-page {
+        position: absolute;
+        left: 30px;
+        top: 10px;
+        cursor: pointer;
+        transition: all 0.2s;
 
-        #avatar {
-            border-radius: 50%;
-            height: 60px;
-            width: 60px;
-            text-align: center;
+        img {
+            width: 100px;
         }
 
-    }
-
-    #contact {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        height: 24px;
-        align-items: center;
-
-        a {
-            margin: 6px;
+        &:hover {
+            opacity: 0.8;
         }
     }
 
-    #showcase {
-        animation: side-left 1s ease-in;
-        margin-top: 20px;
-        width: 100%;
-        height: 100%;
+    #redirect-page {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
+        flex-direction: row;
 
-        .card {
-            display: flex;
-            flex-direction: column;
-            border-radius: 10px 10px 10px 10px;
-            box-shadow: rgba(0, 0, 0, 0.2) 3px 3px;
-            margin: 8px 16px;
-            background-color: $White;
-            height: 400px;
-            min-width: 300px;
-            max-width: 350px;
-            width: 30%;
-            object-fit: cover;
-            transition: transform 0.3s ease 0s;
-            backface-visibility: hidden;
+        .button-redirect {
+            text-decoration: none;
+            position: relative;
+            margin: 0px 20px;
+            font-weight: 500;
+            font-size: 18px;
+            color: $global-color-secondary;
+            transition: all 0.2s;
+            cursor: pointer;
 
-            .card-img {
-                border-radius: 10px 10px 0px 0px;
-                width: 100%;
-                height: 60%;
-                /*  object-fit: scale-down;
-                background-image: url(./assets/image/background.png);
-                background-size: cover; */
+
+            &::before {
+                content: "//";
+                margin-right: 10px;
+                letter-spacing: 5px;
             }
 
-            .content {
-                padding: 16px;
-
-                .card-title {
-                    color: $black;
-                    font-size: 18px;
-                    margin-bottom: 8px;
-                }
-
-                .card-type {
-                    font-size: 16px;
-                    font-weight: 700;
-
-                    .html-type {
-                        color: $Blue-sea-light ;
-                    }
-
-                    .css-type {
-                        color: $Bluesea;
-                    }
-
-                    .js-type {
-                        color: $pink-light;
-                    }
-
-                    .python-type {
-                        color: $green-light;
-                    }
-
-                    .react-type {
-                        color: $red;
-                    }
-
-                    .firebase-type {
-                        color: $orange;
-                    }
-
-                    .redux-type {
-                        color: purple;
-                    }
-
-                    .mongo-type {
-                        color: greenyellow;
-                    }
-
-                    .node-type {
-                        color: green;
-                    }
-
-                    .c-type {
-                        color: blue;
-                    }
-                }
-
-                .description {
-                    opacity: 0.8;
-                    color: $black;
-                    font-weight: 500;
-                    font-size: 16px;
-                    margin-top: 6px;
-                }
+            &::after {
+                content: attr(count);
+                position: absolute;
+                top: -12px;
+                font-weight: 500;
+                font-size: 10px;
+                right: 0;
+                color: $global-color-secondary;
             }
 
             &:hover {
-                transform: scale(1.05)
+                color: white;
             }
         }
+
     }
 }
 
+#page {
+    #home {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: url(./assets/image/tamalsen-home-cover.jpg) no-repeat;
+        background-size: cover;
 
+        #title {
+            font-size: 130px;
+            animation: 12s colorChange infinite;
+        }
 
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
+        #description {
+            font-size: 20px;
+            word-spacing: 15px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
     }
 
-    50% {
-        background-position: 100% 50%;
+    #expertise {
+        padding-top: 80px;
+        position: relative;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: $global-color-primary;
+
+        #title {
+            font-size: 60px;
+        }
+
+        #content {
+            border: $global-color-secondary 3px solid;
+            margin-top: 20px;
+
+            .element {
+                .title {
+                    position: relative;
+                    font-weight: 700;
+                    font-size: 25px;
+                    text-transform: uppercase;
+                    text-decoration: underline $global-color-title-expertise-1;
+                    letter-spacing: 2px;
+                    margin-bottom: 10px;
+
+                    &.pink {
+                        text-decoration: underline $global-color-title-expertise-1;
+
+                    }
+
+                    &.blue {
+                        text-decoration: underline $global-color-title-expertise-2;
+
+                    }
+
+                    &.orange {
+                        text-decoration: underline $global-color-title-expertise-3;
+
+                    }
+                }
+
+                .content {
+                    margin-bottom: 10px;
+                }
+
+                margin: 30px;
+            }
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            background-image: url(./assets/image/hello-world-html-code-768x384.webp);
+            width: 400px;
+            height: 400px;
+            opacity: 0.15;
+            bottom: 0;
+            z-index: 9999;
+        }
     }
 
-    100% {
-        background-position: 0% 50%;
-    }
-}
+    #project {
+        padding: 100px 0;
+        background-color: $global-color-primary;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        #title {
+            color: white;
+            font-size: 60px;
+            margin-bottom: 50px;
+
+        }
+
+        #list {
+            padding: 0px 20px;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: auto auto auto;
+
+            .card {
+                overflow-x: hidden;
+                background-color: $global-color-card;
+                border-radius: 10px;
+                color: white;
+                display: flex;
+                flex-direction: column;
+
+                .card-img {
+                    width: 100%;
+                    overflow: hidden;
+                    height: 300px;
+                    object-fit: contain;
+                    background-color: white;
+                    transition: all ease-in-out 0.2s;
+                }
+
+                .card-title {
+                    margin: 20px 10px;
+                    font-weight: 700;
+                    font-size: 24px;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow-x: hidden;
 
 
-@keyframes side-left {
-    0% {
-        transform: translateX(-100vw);
-    }
+                }
 
-    100% {
-        transform: translateX(0);
-    }
-}
+                &:hover .card-img {
+                    transform: scale(1.1);
+                }
+            }
+        }
 
-
-@keyframes appear {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
     }
 }
