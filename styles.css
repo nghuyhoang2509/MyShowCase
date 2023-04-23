@@ -12,11 +12,20 @@ html {
 }
 
 body {
+  position: relative;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
 }
 
+#sidebar {
+  position: absolute;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20000;
+}
 #navbar {
   display: flex;
   flex-direction: row;
@@ -31,12 +40,25 @@ body {
   z-index: 10001;
   transition: all 0.5s linear;
 }
+@media (max-width: 800px) {
+  #navbar {
+    display: none;
+    justify-content: flex-start;
+    padding-left: 30px;
+  }
+}
 #navbar #logo-page {
   position: absolute;
   left: 30px;
   top: 10px;
   cursor: pointer;
   transition: all 0.2s;
+}
+@media (max-width: 800px) {
+  #navbar #logo-page {
+    right: 20px;
+    left: auto;
+  }
 }
 #navbar #logo-page img {
   width: 80px;
@@ -47,6 +69,11 @@ body {
 #navbar #redirect-page {
   display: flex;
   flex-direction: row;
+}
+@media (max-width: 800px) {
+  #navbar #redirect-page {
+    display: none;
+  }
 }
 #navbar #redirect-page .button-redirect {
   text-decoration: none;
@@ -201,6 +228,11 @@ body {
   gap: 20px;
   grid-template-columns: auto auto auto;
 }
+@media (max-width: 800px) {
+  #page #project #list {
+    grid-template-columns: auto;
+  }
+}
 #page #project #list .card {
   overflow-x: hidden;
   background-color: #201f23;
@@ -257,4 +289,10 @@ body {
   -webkit-user-select: text !important;
      -moz-user-select: text !important;
           user-select: text !important;
+}
+
+@media screen and (max-width: 800px) {
+  #list {
+    grid-template-columns: auto auto;
+  }
 }/*# sourceMappingURL=styles.css.map */

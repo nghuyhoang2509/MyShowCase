@@ -10,6 +10,14 @@ $global-color-title-expertise-1: #df058d;
 $global-color-title-expertise-2: #2c49d8;
 $global-color-title-expertise-3: #ff6b2b;
 
+$mobile-width: 800px;
+
+@mixin mobile {
+    @media (max-width: #{$mobile-width}) {
+        @content;
+    }
+}
+
 * {
 
     box-sizing: border-box;
@@ -25,7 +33,19 @@ html {
 }
 
 body {
+    position: relative;
     user-select: none;
+}
+
+#sidebar {
+    position: absolute;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 20000;
+
+    #redirect {}
 }
 
 #navbar {
@@ -42,12 +62,25 @@ body {
     z-index: 10001;
     transition: all 0.5s linear;
 
+    @include mobile {
+        display: none;
+        justify-content: flex-start;
+        padding-left: 30px;
+    }
+
+
+
     #logo-page {
         position: absolute;
         left: 30px;
         top: 10px;
         cursor: pointer;
         transition: all 0.2s;
+
+        @include mobile {
+            right: 20px;
+            left: auto;
+        }
 
         img {
             width: 80px;
@@ -59,6 +92,10 @@ body {
     }
 
     #redirect-page {
+        @include mobile {
+            display: none;
+        }
+
         display: flex;
         flex-direction: row;
 
@@ -247,6 +284,11 @@ body {
             gap: 20px;
             grid-template-columns: auto auto auto;
 
+            @include mobile() {
+                grid-template-columns: auto;
+
+            }
+
             .card {
                 overflow-x: hidden;
                 background-color: $global-color-card;
@@ -318,4 +360,12 @@ body {
             }
         }
     }
+}
+
+@media screen and (max-width: 800px) {
+    #list {
+
+        grid-template-columns: auto auto;
+    }
+
 }
