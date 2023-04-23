@@ -1,4 +1,3 @@
-// smooth scroll
 $(document).ready(function () {
   // Add smooth scrolling to all links
   $(".button-redirect").on("click", function (event) {
@@ -23,5 +22,13 @@ $(document).ready(function () {
         }
       );
     } // End if
+  });
+
+  $(document).scroll(() => {
+    if ($(window).scrollTop() >= 200) {
+      $("#navbar").addClass("sticky");
+    } else {
+      $("#navbar").removeClass("sticky");
+    }
   });
 });

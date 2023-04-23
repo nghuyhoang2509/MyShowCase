@@ -3,13 +3,15 @@
 $global-color-primary: #1a191d;
 $global-color-card: #201f23;
 $global-color-secondary: #a8abaf;
-$global-color-primary-transparent: rgba(26, 25, 29, 0.7);
+$global-color-text-blue: #66d9ed;
+$global-color-primary-transparent: rgba(26, 25, 29, 0.8);
+$global-color-primary-transparent-1: rgba(26, 25, 29, 0.3);
 $global-color-title-expertise-1: #df058d;
 $global-color-title-expertise-2: #2c49d8;
 $global-color-title-expertise-3: #ff6b2b;
 
 * {
-    user-select: none;
+
     box-sizing: border-box;
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -19,22 +21,26 @@ $global-color-title-expertise-3: #ff6b2b;
 
 html {
     scroll-behavior: smooth;
+    overflow-y: scroll;
 }
 
+body {
+    user-select: none;
+}
 
 #navbar {
-    width: 100vw;
     display: flex;
     flex-direction: row;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    height: 80px;
-    padding: 10px 20px;
+    right: 0;
+    height: 70px;
+    padding: 10px 0px;
     justify-content: center;
     align-items: center;
-    background-color: $global-color-primary-transparent;
     z-index: 10001;
+    transition: all 0.5s linear;
 
     #logo-page {
         position: absolute;
@@ -44,7 +50,7 @@ html {
         transition: all 0.2s;
 
         img {
-            width: 100px;
+            width: 80px;
         }
 
         &:hover {
@@ -89,10 +95,38 @@ html {
         }
 
     }
+
+    &.sticky {
+        position: fixed;
+
+        background-color: $global-color-primary-transparent;
+
+        #logo-page {
+            display: none;
+        }
+
+        .button-redirect {
+            opacity: 0.8;
+            font-size: 16px !important;
+            color: $global-color-text-blue !important;
+
+            &::after {
+                color: $global-color-text-blue !important;
+
+            }
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
 }
 
 #page {
+
+
     #home {
+        position: relative;
         color: white;
         display: flex;
         flex-direction: column;
@@ -112,6 +146,17 @@ html {
             word-spacing: 15px;
             font-weight: 500;
             text-transform: uppercase;
+        }
+
+        &::before {
+            position: absolute;
+            top: 0;
+            content: "";
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: linear-gradient(180deg, #00000012 60%, #1a191d 100%);
+            z-index: 9999;
         }
     }
 
@@ -169,19 +214,20 @@ html {
         }
 
         &::before {
-            content: "";
             position: absolute;
-            background-image: url(./assets/image/hello-world-html-code-768x384.webp);
+            content: "";
+            background: url(./assets/image/hello-world-html-code-768x384.webp) no-repeat;
             width: 400px;
             height: 400px;
             opacity: 0.15;
-            bottom: 0;
+            bottom: -300px;
             z-index: 9999;
         }
     }
 
     #project {
         padding: 100px 0;
+        padding-top: 200px;
         background-color: $global-color-primary;
         display: flex;
         justify-content: center;
@@ -213,7 +259,7 @@ html {
                     width: 100%;
                     overflow: hidden;
                     height: 300px;
-                    object-fit: contain;
+                    object-fit: cover;
                     background-color: white;
                     transition: all ease-in-out 0.2s;
                 }
@@ -235,5 +281,41 @@ html {
             }
         }
 
+    }
+
+    #contact {
+        padding: 50px 30px;
+        background-color: $global-color-primary;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        #title {
+            margin-bottom: 50px;
+            font-size: 40px;
+            font-weight: 700;
+        }
+
+        #info {
+
+            .link {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                margin-top: 20px;
+
+                img {
+                    margin-right: 30px;
+                }
+
+                p {
+                    user-select: text !important;
+
+                }
+            }
+        }
     }
 }
