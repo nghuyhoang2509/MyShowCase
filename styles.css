@@ -61,7 +61,7 @@ body {
   }
 }
 #navbar #logo-page img {
-  width: 80px;
+  width: 200px;
 }
 #navbar #logo-page:hover {
   opacity: 0.8;
