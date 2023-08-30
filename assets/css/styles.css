@@ -50,7 +50,7 @@ body {
 #navbar #logo-page {
   position: absolute;
   left: 30px;
-  top: 10px;
+  top: 20px;
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -61,7 +61,7 @@ body {
   }
 }
 #navbar #logo-page img {
-  width: 200px;
+  width: 300px;
 }
 #navbar #logo-page:hover {
   opacity: 0.8;
@@ -129,7 +129,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: url(./assets/image/tamalsen-home-cover.jpg) no-repeat;
+  background: url(../image/tamalsen-home-cover.jpg) no-repeat;
   background-size: cover;
 }
 #page #home #title {

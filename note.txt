@@ -1,3 +1,0 @@
-Frontend: Make full feature page with React, Redux.
-Backend: Nodejs, Websocket, socket, MongoDB, RedisDB, Firebase, Authencation with cookie, Nginx
-Other: Python with selenium, Make App with C programming, Github (gitflow)
